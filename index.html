@@ -431,6 +431,8 @@
 
     function main() {
         return Events({
+          from_date: params.from_date,
+          to_date: params.to_date
         })
         .groupByUser(function(state, events) {
             // collect the funnel step and drop-off event path for each user, if they entered the funnel
