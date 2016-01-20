@@ -176,7 +176,7 @@
             path_length: path_length_input
         };
         // convert to string
-        MP.api.custom_query(script, params).done(function(results) {
+        MP.api.custom_query(script, queryParams).done(function(results) {
             cqResult = results[0];
             var funnel = generateFunnel(cqResult);
             // add data to the chart we set up previously
@@ -426,8 +426,8 @@
     }
     </script>
     <script type="text/cq" id="cq">
-    var EVENT_LIST = params.event_list || ['App Install', 'Game Played', 'In-App Purchase'];
-    var PATH_LENGTH =  params.path_length || 3;
+    var EVENT_LIST = queryParams.event_list || ['App Install', 'Game Played', 'In-App Purchase'];
+    var PATH_LENGTH =  queryParams.path_length || 3;
 
     function main() {
         return Events({
